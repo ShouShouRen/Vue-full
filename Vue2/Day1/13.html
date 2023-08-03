@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(list, index) in lists" :key="list.id">
+        {{ list.name }}--{{ list.gender }} -- {{ list.id}}
+        <button @click="remove(index)">刪除</button>
+      </li>
+    </ul>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        lists: [
+          { id: 1, name: 'john', gender: 'boy' },
+          { id: 2, name: 'emily', gender: 'girl' },
+          { id: 3, name: 'michael', gender: 'boy' },
+          { id: 4, name: 'susan', gender: 'girl' },
+          { id: 5, name: 'david', gender: 'boy' }
+        ]
+      },
+      methods: {
+        remove(index) {
+          // this.lists = this.lists.filter(item => item.id !== this.lists[index].id);
+
+          this.lists.splice(index, 1)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

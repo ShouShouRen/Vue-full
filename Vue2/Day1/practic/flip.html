@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Flip Text</title>
+</head>
+
+<body>
+  <div id="app">
+    <div :class="{ flipped: isFlipped }">{{ text }}</div>
+    <button @click="flipText">翻轉</button>
+  </div>
+  <style>
+    .flipped {
+      transform: scaleX(-1);
+      width: 30px;
+    }
+  </style>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        text: 'hello',
+        isFlipped: false,
+      },
+      methods: {
+        flipText() {
+          this.isFlipped = !this.isFlipped;
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+  <style>
+    a.active {
+      background-color: red;
+      color: #fff;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      padding: 4px;
+      font-size: 18px;
+    }
+
+    a {
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(list,index) in lists" :key="list.id" @click="activeIndex = index">
+        <a href="#!" :class="{active:index === activeIndex}">{{ list.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        activeIndex: 0,
+        lists: [
+          { id: 1, name: 'apple' },
+          { id: 2, name: 'banan' },
+          { id: 3, name: 'coffee' },
+        ]
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

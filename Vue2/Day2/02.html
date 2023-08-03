@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+  <style>
+    .father{
+      background: lightblue;
+      width: 300px;
+      height: 300px;
+    }
+    .son{
+      background: lightcoral;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h3>v-model .trim .number</h3>
+    <input v-model.trim="username" type="text">
+    <input v-model.number="age" type="text">
+
+    <div @click="fatherFn" class="father">
+      <div @click.stop="sonFn" class="son"></div>
+    </div>
+  </div>
+  <a @click.prevent href="https://google.com">google</a>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        username: '',
+        age: '',
+      },
+      methods: {
+        fatherFn(){
+          alert('father click');
+        },
+        sonFn(e){
+          // 相當於vue得click.stop可以阻止冒泡
+          // e.stopPropagation();
+          alert('son click');
+        },
+        // stop(){
+        //   e.preventDefault();
+        //   alert('erer')
+        // }
+      }
+    })
+  </script>
+</body>
+
+</html>
