@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    姓:<input type="text" v-model="firstName">
+    名:<input type="text" v-model="lastName">
+    <span>{{ fullName }}</span>
+    <button @click="changeName">改名</button>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        firstName: '張',
+        lastName: '山',
+      },
+      methods: {
+        changeName() {
+          this.fullName = '陳偉仁'
+        }
+      },
+      computed: {
+        // fullName() {
+        //   return this.firstName + this.lastName
+        // }
+        fullName: {
+          get() {
+            return this.firstName + this.lastName
+          },
+          set(value) {
+            // console.log(value)
+            // value.slice(0, 1),
+            // value.slice(1)
+            this.firstName = value.slice(0,1);
+            this.lastName = value.slice(1);
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

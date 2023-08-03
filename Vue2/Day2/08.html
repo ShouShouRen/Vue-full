@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(list,index) in lists" :key="list.id">{{list.num}}</li>
+    </ul>
+    total{{ total }}
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        lists: [
+          { id: 1, num: 6 },
+          { id: 2, num: 2 },
+          { id: 3, num: 5 },
+        ]
+      },
+      computed: {
+        total() {
+          return this.lists.reduce((a, b) => a + b.num, 0);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
