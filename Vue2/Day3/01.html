@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-Tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h3>{{ title }}</h3>
+    <div>
+      <button @click="count--">-</button>
+      <span>{{ count }}</span>
+      <button @click="count++">+</button>
+    </div>
+  </div>
+  <script>
+    // vue 生命週期 這8個稱之鉤子函數 hook
+    /*
+      1.創建階段（Creation）：
+      beforeCreate：在實例創建之前被調用，此時數據觀測和事件還未初始化。
+      created：在實例創建之後被調用，此時數據觀測已初始化，但 DOM 還未生成。
+
+      2.掛載階段（Mounting）：
+      beforeMount：在 DOM 元素掛載到頁面之前被調用，此時虛擬 DOM 已經生成。
+      mounted：在 DOM 元素掛載到頁面之後被調用，此時你可以訪問到 DOM 元素，並進行一些初始的 DOM 操作。
+      
+      3.更新階段（Updating）：
+      beforeUpdate：在數據更新之前被調用，此時虛擬 DOM 已經重新渲染，但尚未應用到實際 DOM。
+      updated：在數據更新並且虛擬 DOM 重新渲染完畢之後被調用。
+
+      4.卸載階段（Unmounting）：
+      beforeDestroy：在實例被銷毀之前被調用，此時實例和 DOM 元素仍然可用。這是一個執行一些清理工作的好時機，例如取消訂閱、清除計時器等。
+      destroyed：在實例被銷毀之後被調用，此時實例和相關的 DOM 元素都已被刪除。在這個階段，你可以進行最終的資源釋放和清理工作。
+    */
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 100,
+        title: '計數器'
+      },
+      beforeCreate() {
+        console.log('beforeCreate data準備好之前', this.count);
+      },
+      created() {
+        console.log('create data準備好之後', this.count);
+      },
+      beforeMount() {
+        console.log('beforeMount 掛載前', document.querySelector('h3').innerHTML);
+      },
+      mounted() {
+        console.log('mounted 掛載後', document.querySelector('h3').innerHTML);
+      },
+      beforeUpdate() {
+        console.log('beforeUpdate', document.querySelector('span').innerHTML);
+      },
+      updated() {
+        console.log('updated', document.querySelector('span').innerHTML);
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy', document.querySelector('h3').innerHTML);
+      },
+      destroyed() {
+        console.log('destroyed');
+      }
+    })
+  </script>
+</body>
+
+</html>
