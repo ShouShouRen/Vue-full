@@ -1,5 +1,5 @@
 <template>
-  <div class="header wrapper">
+  <header class="header wrapper">
     <!-- logo -->
     <div class="logo">
       <h1>
@@ -7,7 +7,7 @@
       </h1>
     </div>
     <!-- 导航 -->
-    <div class="nav">
+    <nav class="nav">
       <ul>
         <li><a href="#">首页</a></li>
         <li><a href="#">生鲜</a></li>
@@ -19,7 +19,7 @@
         <li><a href="#">孕婴</a></li>
         <li><a href="#">服装</a></li>
       </ul>
-    </div>
+    </nav>
     <!-- 搜索 -->
     <div class="search">
       <span class="iconfont icon-search"></span>
@@ -30,7 +30,7 @@
       <span class="iconfont icon-cart-full"></span>
       <i>2</i>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>

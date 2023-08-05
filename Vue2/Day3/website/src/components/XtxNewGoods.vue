@@ -1,5 +1,5 @@
 <template>
-  <div class="goods wrapper">
+  <section class="goods wrapper">
     <div class="title">
       <div class="left">
         <h3>新鲜好物</h3>
@@ -11,45 +11,13 @@
     </div>
     <div class="bd">
       <ul>
-        <li>
-          <a href="#">
-            <div class="pic"><img src="@/assets/images/goods1.png" alt="" /></div>
-            <div class="txt">
-              <h4>KN95级莫兰迪色防护口罩</h4>
-              <p>¥ <span>79</span></p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="pic"><img src="@/assets/images/goods2.png" alt="" /></div>
-            <div class="txt">
-              <h4>KN95级莫兰迪色防护口罩</h4>
-              <p>¥ <span>566</span></p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="pic"><img src="@/assets/images/goods3.png" alt="" /></div>
-            <div class="txt">
-              <h4>法拉蒙高颜值记事本可定制</h4>
-              <p>¥ <span>58</span></p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <div class="pic"><img src="@/assets/images/goods4.png" alt="" /></div>
-            <div class="txt">
-              <h4>科技布布艺沙发</h4>
-              <p>¥ <span>3759</span></p>
-            </div>
-          </a>
-        </li>
+        <BaseGoodsItem></BaseGoodsItem>
+        <BaseGoodsItem></BaseGoodsItem>
+        <BaseGoodsItem></BaseGoodsItem>
+        <BaseGoodsItem></BaseGoodsItem>
       </ul>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -63,37 +31,6 @@ export default {
   ul {
     display: flex;
     justify-content: space-between;
-  }
-
-  li {
-    width: 304px;
-    height: 404px;
-    background-color: #EEF9F4;
-    display: block;
-
-    .pic {
-      width: 304px;
-      height: 304px;
-    }
-
-    .txt {
-      text-align: center;
-    }
-
-    h4 {
-      margin-top: 17px;
-      margin-bottom: 8px;
-      font-size: 20px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #AA2113;
-
-      span {
-        font-size: 22px;
-      }
-    }
   }
 }
 </style>

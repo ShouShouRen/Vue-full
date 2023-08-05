@@ -1,5 +1,5 @@
 <template>
-  <div class="topic wrapper">
+  <section class="topic wrapper">
     <div class="title">
       <div class="left">
         <h3>最新专题</h3>
@@ -102,7 +102,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

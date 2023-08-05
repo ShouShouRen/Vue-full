@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <section class="banner">
     <div class="wrapper">
       <!-- 图 -->
       <ul class="pic">
@@ -92,7 +92,7 @@
         <li><i></i></li>
       </ol>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

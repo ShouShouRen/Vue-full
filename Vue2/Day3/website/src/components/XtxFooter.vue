@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="wrapper">
       <div class="service">
         <ul>
@@ -77,7 +77,7 @@
         <p>CopyRight © 小兔鲜</p>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
