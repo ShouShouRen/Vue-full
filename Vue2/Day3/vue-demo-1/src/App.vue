@@ -1,32 +1,34 @@
 <template>
-  <div class="app">
-    <div class="box" @click="fn"></div>
+  <div class="App">
+    <HmHeader></HmHeader>
+    <HmMain></HmMain>
+    <HmFooter></HmFooter>
   </div>
 </template>
 
 <script>
+import HmHeader from './components/HmHeader.vue';
+import HmMain from './components/HmMain.vue';
+import HmFooter from './components/HmFooter.vue';
 export default {
-  created() {
-    console.log('我是created')
-  },
-  methods: {
-    fn() {
-      alert('hello');
-    }
+  components: {
+    // HmHeader: HmHeader,
+    // HmMain: HmMain,
+    // HmFooter: HmFooter
+    HmHeader,
+    HmMain,
+    HmFooter
   }
 }
 </script>
 
-<style lang="less">
-.app {
-  width: 400px;
-  height: 400px;
-  background-color: pink;
-
-  .box {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-  }
+<style lang="scss">
+.App {
+  width: 600px;
+  height: 700px;
+  background-color: #87ceeb;
+  margin-inline: auto;
+  padding: 20px;
+  color: #fff;
 }
 </style>
