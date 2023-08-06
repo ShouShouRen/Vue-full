@@ -9,6 +9,7 @@
 <script>
   export default {
     data(){
+      console.log('data執行')
       return{
         count: 10
       }

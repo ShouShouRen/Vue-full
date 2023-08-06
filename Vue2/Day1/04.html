@@ -10,14 +10,14 @@
 
 <body>
   <div id="app">
-    <div v-html="msg"></div>
+    <div v-text="txt"></div>
     <div v-html="p"></div>
   </div>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        msg: `<a href='https://google.com'>google</a>`,
+        txt: 'Hello Vue',
         p: `<p>大家好</p>`
       },
     })
