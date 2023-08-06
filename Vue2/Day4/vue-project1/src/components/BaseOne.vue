@@ -1,6 +1,8 @@
 <template>
   <div>
     BaseOne
+    <span>111</span>
+    <a href="">link</a>
   </div>
 </template>
 
