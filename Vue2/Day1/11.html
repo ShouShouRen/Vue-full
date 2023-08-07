@@ -10,11 +10,11 @@
 
 <body>
   <div id="app">
-    <button v-show="index > 0" @click="index--">上一頁</button>
+    <img :src="imgList[index]" alt="">
     <div>
-      <img :src="imgList[index]" alt="">
+      <button v-show="index > 0" @click="index--">上一頁</button>
+      <button v-show="index < imgList.length -1" @click="index++">下一頁</button>
     </div>
-    <button v-show="index < imgList.length -1" @click="index++">下一頁</button>
   </div>
   <script>
     const app = new Vue({
