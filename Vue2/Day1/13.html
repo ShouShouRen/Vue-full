@@ -31,9 +31,11 @@
       },
       methods: {
         remove(index) {
-          // this.lists = this.lists.filter(item => item.id !== this.lists[index].id);
+          console.log(this.lists[index]);
+          console.log(this.lists[index].id);
+          this.lists = this.lists.filter(item => item.id !== this.lists[index].id);
 
-          this.lists.splice(index, 1)
+          // this.lists.splice(index, 1)
         }
       }
     })

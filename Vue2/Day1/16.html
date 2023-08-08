@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <div v-if="editMode">
+      <input v-model="editName" @keyup.enter="saveEdit" />
+      <button @click="saveEdit">保存</button>
+    </div>
+    <div v-else>
+      <input @keyup.enter="add" type="text" v-model="todoName">
+      <button @click="add">添加</button>
+    </div>
+    <ul>
+      <li v-for="(list, index) in lists" :key="list.id">
+        {{ index + 1 }} -- {{ list.name }}
+        <button @click="del(index)">删除</button>
+        <button @click="edit(index)">编辑</button>
+      </li>
+    </ul>
+    <div v-show="lists.length > 0">
+      <p>所有任務 {{ lists.length }} 項</p>
+      <button @click="clear()">清空所有</button>
+    </div>
+  </div>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        todoName: '',
+        editName: '',
+        editIndex: -1,
+        editMode: false,
+        lists: [
+          { id: 1, name: '睡覺' },
+          { id: 2, name: '吃飯' },
+          { id: 3, name: '打遊戲' },
+        ]
+      },
+      methods: {
+        del(index) {
+          this.lists.splice(index, 1);
+        },
+        add() {
+          if (this.todoName.trim() === '') {
+            alert('請輸入任務');
+            return;
+          }
+          this.lists.unshift({
+            id: +new Date(),
+            name: this.todoName
+          });
+          this.todoName = '';
+        },
+        clear() {
+          this.lists = [];
+        },
+        edit(index) {
+          this.editIndex = index;
+          this.editMode = true;
+          this.editName = this.lists[index].name;
+        },
+        saveEdit() {
+          if (this.editName.trim() === '') {
+            alert('請輸入任務名稱');
+            return;
+          }
+          this.lists[this.editIndex].name = this.editName;
+          this.editMode = false;
+          this.editName = '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
