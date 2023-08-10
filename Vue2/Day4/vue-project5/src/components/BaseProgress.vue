@@ -9,8 +9,23 @@
 <script>
 export default {
   // props: ["w"],
+  // props:{
+  //   w: Number,
+  // }
   props:{
-    w: Number
+    w: {
+      type: Number,
+      // required: true,
+      default: 0,
+      validator(value){
+        // console.log(value)
+        if(value >= 0 && value <=100){
+          return true
+        }else{
+          return false
+        }
+      }
+    }
   }
 
 }
