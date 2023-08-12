@@ -10,7 +10,7 @@
 
 <body>
   <div id="app">
-    <input @keyup="fu" v-model="username" type="text">
+    <input @keyup="ff" v-model="username" type="text">
     <input @keyup.enter="fu" v-model="username" type="text">
   </div>
   <script>
@@ -20,9 +20,12 @@
         username: ''
       },
       methods: {
-        fu(e){
-          if(e.key === 'Enter'){
-            console.log('enter',this.username)
+        ff() {
+          console.log('keyup', this.username)
+        },
+        fu(e) {
+          if (e.key === 'Enter') {
+            console.log('enter', this.username)
           }
         }
       }
