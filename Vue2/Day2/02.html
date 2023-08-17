@@ -29,8 +29,8 @@
     <div @click="fatherFn" class="father">
       <div @click.stop="sonFn" class="son"></div>
     </div>
+    <a @click.prevent href="https://google.com">google</a>
   </div>
-  <a @click.prevent href="https://google.com">google</a>
   <script>
     const app = new Vue({
       el: '#app',
@@ -47,10 +47,6 @@
           // e.stopPropagation();
           alert('son click');
         },
-        // stop(){
-        //   e.preventDefault();
-        //   alert('erer')
-        // }
       }
     })
   </script>
