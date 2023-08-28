@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Circle Size Example</title>
+  <style>
+    .circle-container {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #409eff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      transition: width 0.5s, height 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="circle-container">
+      <div class="circle" :style="{ width: circleSize + 'px', height: circleSize + 'px' }">
+        {{ circleSize }}
+      </div>
+    </div>
+    <button @click="changeSize(50)">Small</button>
+    <button @click="changeSize(100)">Medium</button>
+    <button @click="changeSize(150)">Large</button>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        circleSize: 100
+      },
+      methods: {
+        changeSize(newSize) {
+          this.circleSize = newSize;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
