@@ -1,6 +1,7 @@
 <template>
   <div>
-    <BaseSelect :cityId="selectId" @changeId="selectId = $event"></BaseSelect>
+    <!-- <BaseSelect :cityId="selectId" @changeId="selectId = $event"></BaseSelect> -->
+    <BaseSelect v-model="selectId"></BaseSelect>
   </div>
 </template>
 
