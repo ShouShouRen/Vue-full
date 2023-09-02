@@ -17,6 +17,9 @@
         </li>
       </ul>
     </div>
+    <div class="box2" v-loading="isLoading2">
+
+    </div>
   </div>
 </template>
 
@@ -31,6 +34,7 @@ export default {
     return {
       list: [],
       isLoading: true,
+      isLoading2: true,
     }
   },
   async created() {
@@ -68,12 +72,12 @@ export default {
   background: #fff url('./loading.gif') no-repeat center;
 }
 
-/* .box2 {
+.box2 {
   width: 400px;
   height: 400px;
   border: 2px solid #000;
   position: relative;
-} */
+}
 
 .box {
   width: 800px;
