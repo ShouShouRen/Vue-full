@@ -10,13 +10,17 @@ export default {
   data() {
     return {
       color1: 'red',
-      color2: 'blue'
+      color2: 'orange'
     }
   },
   directives: {
     color: {
       inserted(el, binding) {
         // console.log(el)
+        el.style.color = binding.value;
+      },
+      update(el, binding) {
+        console.log('指令的值被修改了');
         el.style.color = binding.value;
       }
     }
