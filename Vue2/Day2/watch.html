@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>輸入數字讓他變兩倍</p>
+    <input v-model="baseNumber" type="number">
+    <p>結果：{{ doubledNumber }}</p>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      baseNumber: 0,
+      doubledNumber: 0
+    },
+    watch: {
+      baseNumber: function (newVal, oldVal) {
+        this.doubledNumber = newVal * 2;
+        console.log(`舊的值${oldVal}`);
+        console.log(`新的值${newVal}`);
+      }
+    }
+  })
+</script>
+
+</html>
