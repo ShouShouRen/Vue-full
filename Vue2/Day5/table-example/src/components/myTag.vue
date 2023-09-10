@@ -1,14 +1,18 @@
 <template>
   <div class="my-tag">
-    <input v-if="isEdit" class="input" type="text" placeholder="输入标签" ref="input" v-focus @blur="isEdit = false" />
+    <input v-if="isEdit" class="input" type="text" placeholder="输入标签" ref="input" v-focus @blur="isEdit = false"
+      :value="value" @keyup.enter="handleEnter" />
     <div class="text" v-else @dblclick="handleClick">
-      茶具
+      {{ value }}
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    value: String
+  },
   data() {
     return {
       isEdit: false
@@ -17,6 +21,13 @@ export default {
   methods: {
     handleClick() {
       this.isEdit = true
+    },
+    handleEnter(e) {
+      if(e.target.value.trim() === '') return alert('內容不得是空值');
+      this.$emit('input', e.target.value);
+      this.isEdit = false; 
+
+
     }
   }
 }

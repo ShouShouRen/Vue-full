@@ -17,7 +17,7 @@
             <img src="https://yanxuan-item.nosdn.127.net/f8c37ffa41ab1eb84bff499e1f6acfc7.jpg" />
           </td>
           <td>
-            <myTag></myTag>
+            <myTag v-model="tmpText"></myTag>
           </td>
         </tr>
         <tr>
@@ -42,6 +42,7 @@ export default {
   components: { myTag },
   data() {
     return {
+      tmpText: '水杯',
       goods: [
         {
           id: 101,
@@ -126,4 +127,5 @@ export default {
       color: #999;
     }
   }
-}</style>
+}
+</style>
