@@ -1,4 +1,4 @@
-# product-list
+# vue-router
 
 ## Project setup
 ```
