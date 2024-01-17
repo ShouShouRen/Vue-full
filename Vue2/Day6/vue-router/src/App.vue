@@ -42,10 +42,15 @@ body {
   color: #ccc;
   border: 1px solid black;
 }
-/* .footer_wrap a:hover {
-  background-color: #555;
-} */
-a.router-link-active{
+/* 
+在 Vue 的路由系統中，`router-link` 元素在被點擊後會獲得兩種 CSS 類別：`router-link-active` 和 `router-link-exact-active`。
+
+- `router-link-active`：這是一種模糊匹配的類別。當 `router-link` 的 `to` 屬性值以特定路徑開頭（例如 "/find"），無論其後是否還有其他路徑（例如 "/find/xxx"），該 `router-link` 都會被加上 `router-link-active` 類別。
+
+- `router-link-exact-active`：這是一種精確匹配的類別。只有當 `router-link` 的 `to` 屬性值與當前路徑完全相符（例如 "/find"）時，該 `router-link` 才會被加上 `router-link-exact-active` 類別。 */
+
+.footer_wrap a.router-link-active{
   background-color: darkslateblue;
 }
+
 </style>
